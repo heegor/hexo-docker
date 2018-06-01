@@ -35,11 +35,6 @@ while read line;do
 done < conf/install.conf 
 
 
-while read line;do  
-    eval "$line"  
-done < conf/hexo.conf
-
-
 # remove the old contain if exists
 if [ `docker ps -a | grep $APP_NAME -wc` -gt 0 ]; then
     docker stop $APP_NAME
