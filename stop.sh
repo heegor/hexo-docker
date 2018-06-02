@@ -6,4 +6,4 @@ while read line;do
     eval "$line"  
 done < conf/install.conf
 
-docker start $APP_NAME
+docker stop $APP_NAME
