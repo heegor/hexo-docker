@@ -16,6 +16,7 @@ docker build \
     -t $APP_NAME:$APP_VERSION \
     --build-arg GIT_USER_NAME="$GIT_USER_NAME" \
     --build-arg GIT_USER_EMAIL="$GIT_USER_EMAIL" \
+    --build-arg HEXO_DOCKER_HOME="$HEXO_DOCKER_HOME" \
     .
 
 # Remove the old container if exists
