@@ -33,8 +33,8 @@ work_dir=$(cd `dirname $0`; pwd)
 
 docker create \
     -i \
-    -p $HEXO_PORT:4000 \
-    -v $HEXO_HOME:/hexo \
-    -v $SSH_HOME:/.ssh \
+    -p $HEXO_LOCAL_PORT:4000 \
+    -v $HEXO_LOCAL_HOME:$HEXO_DOCKER_HOME \
+    -v $SSH_LOCAL_HOME:/.ssh \
     --name=$APP_NAME \
     $APP_NAME:$APP_VERSION
