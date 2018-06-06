@@ -12,11 +12,14 @@ done < conf/install.conf
 # Build docker image
 echo "Building image"
 
+user_id=`id -u`
+
 docker build \
     -t $APP_NAME:$APP_VERSION \
     --build-arg GIT_USER_NAME="$GIT_USER_NAME" \
     --build-arg GIT_USER_EMAIL="$GIT_USER_EMAIL" \
     --build-arg HEXO_DOCKER_HOME="$HEXO_DOCKER_HOME" \
+    --build-arg USER_ID=$user_id \
     .
 
 # Remove the old container if exists
@@ -30,10 +33,9 @@ fi
 # Start the new container
 echo "Initializing new service"
 
-work_dir=$(cd `dirname $0`; pwd)
-
 docker create \
     -i \
+    -u $user_id \
     -p $HEXO_LOCAL_PORT:4000 \
     -v $HEXO_LOCAL_HOME:$HEXO_DOCKER_HOME \
     -v $SSH_LOCAL_HOME:/root/.ssh \
