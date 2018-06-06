@@ -85,7 +85,11 @@ elif [ "$mode" = "GIT" ]; then
     fi
 
     # initialize hexo workspace from a git repository
+    echo "Checking out hexo workspace from $WORKSPACE_GIT_REPO_BRANCH"
     docker exec -t $APP_NAME sh -c "cd $HEXO_DOCKER_HOME && git clone -b $WORKSPACE_GIT_REPO_BRANCH $WORKSPACE_GIT_REPO_URL $BLOG_NAME"
+    
+    echo
+    echo "Installing npm packages via existing configurations"
     docker exec -t $APP_NAME sh -c "cd $HEXO_DOCKER_HOME/$BLOG_NAME && npm install"
 fi
 
