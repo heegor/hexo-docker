@@ -36,6 +36,6 @@ docker create \
     -i \
     -p $HEXO_LOCAL_PORT:4000 \
     -v $HEXO_LOCAL_HOME:$HEXO_DOCKER_HOME \
-    -v $SSH_LOCAL_HOME:/.ssh \
+    -v $SSH_LOCAL_HOME:/root/.ssh \
     --name=$APP_NAME \
     $APP_NAME:$APP_VERSION
