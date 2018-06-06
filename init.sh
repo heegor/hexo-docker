@@ -3,7 +3,7 @@
 set -e
 
 function printHelpMessage {
-    echo "Usage: hexoInit.sh command"
+    echo "Usage: init.sh command"
     echo
     echo -e "Options"
     echo -e "  -m \t Mode. Required, valid values:"
