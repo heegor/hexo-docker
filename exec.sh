@@ -17,4 +17,4 @@ while read line;do
 done < conf/hexo.conf
 
 
-docker exec $APP_NAME sh -c "cd $HEXO_DOCKER_HOME/$DEFAULT_BLOG_NAME && hexo $@"
+docker exec $APP_NAME sh -c "cd $HEXO_DOCKER_HOME/$BLOG_NAME && $@"
