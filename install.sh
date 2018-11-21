@@ -25,6 +25,7 @@ docker build \
     --build-arg GIT_USER_NAME="$GIT_USER_NAME" \
     --build-arg GIT_USER_EMAIL="$GIT_USER_EMAIL" \
     --build-arg HEXO_DOCKER_HOME="$HEXO_DOCKER_HOME" \
+    --build-arg HEXO_TIMEZONE="$HEXO_TIMEZONE" \
     --build-arg USER_ID=$user_id \
     --build-arg USER_HOME=$user_home \
     .
